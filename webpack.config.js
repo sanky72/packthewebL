@@ -7,4 +7,7 @@ module.exports = {
     path: path.resolve("./dist"), // the folder for the above file storage
   },
   mode: "none",
+  module: {
+    rules: [{ test: /\.(png|jpg)$/, type: "asset/resource" }],
+  },
 };
