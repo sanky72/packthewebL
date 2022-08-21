@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/sanky72/packthewebL#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "sass": "^1.54.5",
     "sass-loader": "^13.0.2",
