@@ -8,6 +8,21 @@ module.exports = {
   },
   mode: "none",
   module: {
-    rules: [{ test: /\.(png|jpg)$/, type: "asset/resource" }],
+    // rules: [{ test: /\.(png|jpg)$/, type: "asset/resource" }],
+    rules: [
+      {
+        test: /\.(png|jpg)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 3 * 1024,
+          },
+        },
+      },
+      {
+        test: /\.txt/,
+        type: "asset/source",
+      },
+    ],
   },
 };

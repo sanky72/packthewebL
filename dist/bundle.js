@@ -25,11 +25,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Happy_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _altText_txt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
   const img = document.createElement("img");
-  img.alt = "Happy";
+  img.alt = _altText_txt__WEBPACK_IMPORTED_MODULE_1__;
   img.width = 500;
   img.src = _Happy_jpg__WEBPACK_IMPORTED_MODULE_0__;
   const body = document.querySelector("body");
@@ -42,6 +43,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "8153af5932d5c49ebd74.jpg";
+
+/***/ }),
+/* 4 */
+/***/ ((module) => {
+
+module.exports = "Image of Happy";
 
 /***/ })
 /******/ 	]);
