@@ -1,11 +1,13 @@
 const path = require("path");
 const TercerPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "bundle.[contenthash].js", // file output name
     path: path.resolve("./dist"), // the folder for the above file storage
+    // clean: true,  // default offering from webpack to clear the folder in output.path
   },
   mode: "none",
   module: {
@@ -50,6 +52,12 @@ module.exports = {
     new TercerPlugin(),
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [
+        "**/*",
+        path.join(process.cwd(), "build/**/*"),
+      ],
     }),
   ],
 };
