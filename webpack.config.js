@@ -1,5 +1,5 @@
 const path = require("path");
-
+const TercerPlugin = require("terser-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -45,4 +45,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new TercerPlugin()],
 };
