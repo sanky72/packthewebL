@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js", // file output name
     path: path.resolve("./dist"), // the folder for the above file storage
-    // publicPath: "", // not needed in webpack >= 5
+    publicPath: "/static/",
     // clean: true,  // default offering from webpack to clear the folder in output.path
   },
   mode: "production",
