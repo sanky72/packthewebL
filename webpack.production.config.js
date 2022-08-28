@@ -3,9 +3,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    "hello-world": "./src/hello-world.js",
+    happy: "./src/happy.js",
+  },
   output: {
-    filename: "bundle.[contenthash].js", // file output name
+    filename: "[name].[contenthash].js", // file output name
     path: path.resolve("./dist"), // the folder for the above file storage
     // publicPath: "", // not needed in webpack >= 5
     // clean: true,  // default offering from webpack to clear the folder in output.path
@@ -55,14 +58,24 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.[contenthash].css",
+      filename: "[name].[contenthash].css",
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Hello world",
-      // filename: "subfolder/custom_filename.html",
-      description: "some description",
-      template: "src/index.hbs",
+      chunks: ["hello-world"],
+      filename: "hello-world.html",
+      description: "hello world",
+      template: "src/page-template.hbs",
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      title: "Happy",
+      chunks: ["happy"],
+      filename: "happy.html",
+      description: "Happy",
+      template: "src/page-template.hbs",
+      minify: false,
     }),
   ],
 };
