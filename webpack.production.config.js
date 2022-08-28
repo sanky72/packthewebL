@@ -14,6 +14,11 @@ module.exports = {
     // clean: true,  // default offering from webpack to clear the folder in output.path
   },
   mode: "production",
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
     // rules: [{ test: /\.(png|jpg)$/, type: "asset/resource" }],
     rules: [
