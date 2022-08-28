@@ -73,7 +73,6 @@ module.exports = {
       filename: "hello-world.html",
       description: "hello world",
       template: "src/page-template.hbs",
-      minify: false,
     }),
     new HtmlWebpackPlugin({
       title: "Happy",
@@ -81,7 +80,6 @@ module.exports = {
       filename: "happy.html",
       description: "Happy",
       template: "src/page-template.hbs",
-      minify: false,
     }),
   ],
 };
